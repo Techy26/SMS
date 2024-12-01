@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Section 1: Personal Information -->
+    <section id="section1" class="section">
+        <h2>Personal Information</h2>
+        
+        <!-- Circular Image -->
+        <div class="profile-img-container">
+            <img src="4.png" alt="Profile Picture" class="profile-img">
+        </div>
+
+        <!-- Personal Info Form -->
+        <form id="personalInfoForm">
+            <div class="info-row">
+                <!-- Name and Batch in the first row -->
+                <div class="input-container">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="Jae Sree Suriya">
+                </div>
+                <div class="input-container">
+                    <label for="batch">Batch:</label>
+                    <select id="batch" name="batch">
+                        <option value="2022-26">2022-26</option>
+                        <option value="2023-27">2023-27</option>
+                        <option value="2024-28">2024-28</option>
+                    </select>
+                </div>
+            </div>
+            <div class="info-row">
+                <!-- Dept and Year in the second row -->
+                <div class="input-container">
+                    <label for="dept">Department:</label>
+                    <select id="dept" name="dept">
+                        <option value="AI & DS">AI & DS</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE </option>
+                        <option value="EEE">EEE</option>
+                        <option value="IT">IT</option>
+                        <option value="MECH">MECH</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <label for="year">Year:</label>
+                    <select id="year" name="year">
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                        <option value="IV">IV</option>
+                    </select>
+                </div>
+            </div>
+            <div class="info-row">
+                <!-- Blood Group and Gender in the third row -->
+                <div class="input-container">
+                    <label for="bloodGroup">Blood Group:</label>
+                    <select id="bloodGroup" name="bloodGroup">
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!-- Section 2: Education -->
+    <section id="section2" class="section">
+        <h2>Education</h2>
+        <table id="educationTable">
+        <center>
+            <thead>
+                <tr>
+                    <th>Degree</th>
+                    <th>University</th>
+                    <th>Passing Year</th>
+                    <th>%</th>
+                </tr>
+            </thead>
+        </center>
+            <tbody>
+                <tr>
+                    <td><input type="text" placeholder="Enter Degree"></td>
+                    <td><input type="text" placeholder="Enter University"></td>
+                    <td><input type="number" placeholder="Enter Year"></td>
+                    <td><input type="number" placeholder="Enter Percentage" step="0.01" min="0" max="100"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <button onclick="addRow()">Add More Education</button>
+    </section>
+
+   <!-- Section 3: Skills -->
+<section id="section3" class="section">
+    <h2>Skills</h2>
+    <form id="skillsForm">
+        <div class="skills-row">
+            <!-- Technical and Communication in the first row -->
+            <div class="select-container">
+                <label for="technical">Technical:</label>
+                <select id="technical">
+                    <option value="">Select Technical Skills</option>
+                    <option value="java">Java</option>
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                </select>
+            </div>
+            <div class="select-container">
+                <label for="communication">Communication:</label>
+                <select id="communication">
+                    <option value="">Select Communication Skills</option>
+                    <option value="public-speaking">Public Speaking</option>
+                    <option value="writing">Writing</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="skills-row">
+            <!-- Aptitude and Others in the second row -->
+            <div class="select-container">
+                <label for="aptitude">Aptitude:</label>
+                <select id="aptitude">
+                    <option value="">Select Aptitude Skills</option>
+                    <option value="logical-reasoning">Logical Reasoning</option>
+                    <option value="problem-solving">Problem Solving</option>
+                </select>
+            </div>
+            <div class="select-container">
+                <label for="others">Others:</label>
+                <select id="others">
+                    <option value="">Select Other Skills</option>
+                    <option value="leadership">Leadership</option>
+                    <option value="creativity">Creativity</option>
+                </select>
+            </div>
+        </div>
+    </form>
+    <button onclick="submitSkillsForm(event)">Submit</button>
+    <br>
+    <!-- Display Skills Table -->
+    <div id="skillsTableContainer" style="display: none;">
+        <h3>Submitted Skills:</h3>
+        <table id="submittedSkillsTable">
+            <thead>
+                <tr>
+                    <th>Technical</th>
+                    <th>Communication</th>
+                    <th>Aptitude</th>
+                    <th>Others</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Section 4: Courses -->
+<section id="section4" class="section">
+    <h2>Courses</h2>
+    <form id="coursesForm">
+        <!-- Row for Course Provider, Course Name, Duration -->
+        <div class="info-row">
+            <div class="input-container">
+                <label for="courseProvider">Course Provider:</label>
+                <input type="text" id="courseProvider" placeholder="Enter Course Provider">
+            </div>
+            <div class="input-container">
+                <label for="courseName">Course Name:</label>
+                <input type="text" id="courseName" placeholder="Enter Course Name">
+            </div>
+           
+        </div>
+
+        <!-- Row for Feedback (Star Rating) -->
+        <div class="info-row">
+            <div class="input-container">
+                <label for="duration">Duration:</label>
+                <input type="text" id="duration" placeholder="Enter Duration">
+            </div>
+            <div class="input-container">
+                <label for="feedback">Feedback:</label>
+                <div id="feedback" class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                    <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                    <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                    <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="button" onclick="submitCourseForm()">Submit</button>
+    </form>
+    <br>
+    <!-- Courses Table -->
+    <div id="coursesTableContainer" style="display: none;">
+        <h3>Submitted Courses:</h3>
+        <table id="submittedCoursesTable">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Course Name</th>
+                    <th>Duration</th>
+                    <th>Feedback</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Section 5: Achievements -->
+<section id="section5" class="section">
+    <h2>Achievements</h2>
+    <form id="achievementsForm">
+        <div class="input-container">
+            <label for="achievements">Achievements:</label>
+            <input type="text" id="achievements" placeholder="Enter Achievements">
+        </div>
+        <button type="button" onclick="editAchievements()">Edit</button>
+        <button type="button" onclick="submitAchievements()">Submit</button>
+    </form>
+    <div id="achievementsDisplay" style="display: none;">
+        <h3>Your Achievements:</h3>
+        <p id="achievementsText"></p>
+    </div>
+</section>
+
+<!-- Section 6: Publications -->
+<!-- Section 6: Publications -->
+<section id="section6" class="section">
+    <h2>Publications</h2>
+    <form id="publicationsForm">
+        <!-- Row for Type, Title, Year -->
+        <div class="info-row">
+            <div class="input-container">
+                <label for="publicationType">Publication Type:</label>
+                <select id="publicationType" name="publicationType">
+                    <option value="journal">Journal</option>
+                    <option value="conference">Conference</option>
+                    <option value="book">Book</option>
+                    <option value="report">Report</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <label for="publicationTitle">Title:</label>
+                <input type="text" id="publicationTitle" placeholder="Enter Publication Title">
+            </div>
+            <div class="input-container">
+                <label for="publicationYear">Year:</label>
+                <select id="publicationYear" name="publicationYear">
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="button" onclick="submitPublicationForm()">Submit</button>
+    </form>
+    <br>
+    
+
+    <!-- Publications Table -->
+    <div id="publicationsTableContainer" style="display: none;">
+        <h3>Submitted Publications:</h3>
+        <table id="submittedPublicationsTable">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Title</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Section 7: Onduty -->
+<section id="section7" class="section">
+    <h2>Onduty</h2>
+    <form id="ondutyForm">
+        <!-- Row for Type, College Name -->
+        <div class="info-row">
+            <div class="input-container">
+                <label for="ondutyType">Type:</label>
+                <select id="ondutyType">
+                    <option value="academic">Academic</option>
+                    <option value="cultural">Cultural</option>
+                    <option value="sports">Sports</option>
+                    <option value="volunteer">Volunteer</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <label for="clgName">Clg Name:</label>
+                <input type="text" id="clgName" placeholder="Enter College Name">
+            </div>
+        </div>
+
+        <!-- Row for Month & Year, Role -->
+        <div class="info-row">
+            <div class="input-container">
+                <label for="monthYear">Month & Year:</label>
+                <input type="text" id="monthYear" placeholder="Enter Month & Year">
+            </div>
+            <div class="input-container">
+                <label for="role">Role:</label>
+                <select id="role">
+                    <option value="winner">Winner</option>
+                    <option value="participant">Participant</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="button" onclick="submitOndutyForm()">Submit</button>
+    </form>
+
+    <!-- Onduty Table -->
+    <div id="ondutyTableContainer" style="display: none;">
+        <h3>Submitted Onduty:</h3>
+        <table id="submittedOndutyTable">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>College Name</th>
+                    <th>Month & Year</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Section 8: Sports -->
+<section id="section8" class="section">
+    <h2>Sports</h2>
+    <form id="sportsForm">
+        <!-- Row for Category, Organizer/Event Name -->
+        <div class="info-row">
+            <div class="input-container">
+                <label for="sportsCategory">Category:</label>
+                <select id="sportsCategory">
+                    <option value="football">Football</option>
+                    <option value="basketball">Basketball</option>
+                    <option value="volleyball">Volleyball</option>
+                    <option value="cricket">Cricket</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <label for="sportsEventName">Organizer/Event Name:</label>
+                <input type="text" id="sportsEventName" placeholder="Enter Event Name">
+            </div>
+        </div>
+
+        <!-- Row for Month & Year, Role -->
+        <div class="info-row">
+            <div class="input-container">
+                <label for="sportsMonthYear">Month & Year:</label>
+                <input type="text" id="sportsMonthYear" placeholder="Enter Month & Year">
+            </div>
+            <div class="input-container">
+                <label for="sportsRole">Role:</label>
+                <select id="sportsRole">
+                    <option value="winner">Winner</option>
+                    <option value="runner">Runner</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="button" onclick="submitSportsForm()">Submit</button>
+    </form>
+
+    <!-- Sports Table -->
+    <div id="sportsTableContainer" style="display: none;">
+        <h3>Submitted Sports:</h3>
+        <table id="submittedSportsTable">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Event Name</th>
+                    <th>Month & Year</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Section 9: Certification -->
+<section id="section9" class="section">
+    <h2>Certification</h2>
+    <form id="certificationForm">
+        <div class="input-container">
+            <label for="certificationUpload">Upload Certificate:</label>
+            <input type="file" id="certificationUpload" multiple>
+        </div>
+        <button type="button" onclick="submitCertificationForm()">Submit</button>
+    </form>
+
+    <!-- Certification Cards Container -->
+    <div id="certificationCardsContainer" style="display: none;">
+        <h3>Uploaded Certificates:</h3>
+        <div id="certificationCards" class="card-container">
+            <!-- Cards will be added here -->
+        </div>
+    </div>
+</section>
+
+<!-- Section 10: Others -->
+<section id="section10" class="section">
+    <h2>Others</h2>
+    <div class="input-container">
+        <label for="otherInfo">Enter Additional Information:</label>
+        <input type="text" id="otherInfo" placeholder="Enter details">
+    </div>
+    <button type="button" onclick="saveOthers()">Save</button>
+    <button type="button" onclick="editOthers()">Edit</button>
+</section>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

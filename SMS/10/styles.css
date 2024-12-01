@@ -1,0 +1,356 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    padding: 20px;
+}
+
+/* Container styles */
+.section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Headings */
+h2 {
+    font-size: 1.8rem;
+    color: #2C3E50;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Profile Image */
+.profile-img-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #3498db;
+}
+
+/* Form Input Styles */
+.input-container {
+    width: 48%;
+    margin-bottom: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+select {
+    background-color: #ecf0f1;
+}
+
+/* Form Rows for Personal Information */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.select-row {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #34495e;
+}
+
+/* Skills Section - Two rows layout */
+.skills-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.select-container {
+    width: 48%;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Table Styles for Education */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #3498db;
+    color: white;
+}
+
+table td {
+    background-color: #ecf0f1;
+}
+
+table input {
+    width: 100%;
+    border: none;
+    padding: 8px;
+}
+
+/* Add a margin between sections */
+section + section {
+    margin-top: 40px;
+}
+
+/* Styles for the Submitted Skills Table */
+#submittedSkillsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#submittedSkillsTable th, #submittedSkillsTable td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+#submittedSkillsTable th {
+    background-color: #3498db;
+    color: white;
+}
+
+#submittedSkillsTable td {
+    background-color: #ecf0f1;
+}
+
+/* Hide table initially */
+#skillsTableContainer {
+    display: none;
+}
+
+/* Make the input fields appear in a row */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    width: 48%; /* Adjust the width to fit 3 input fields in a row */
+    margin-bottom: 15px;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: flex-start;
+    width: 160px;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 43px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+    color: #f39c12;
+}
+
+/* Button styling */
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Table for displaying courses */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+table th {
+    background-color: #3498db;
+    color: white;
+}
+
+table td {
+    background-color: #ecf0f1;
+}
+
+table input {
+    width: 100%;
+    border: none;
+    padding: 8px;
+}
+
+
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Button styling */
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Table for displaying publications */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+table th {
+    background-color: #3498db;
+    color: white;
+}
+
+table td {
+    background-color: #ecf0f1;
+}
+
+table input {
+    width: 100%;
+    border: none;
+    padding: 8px;
+}
+
+/* Certification cards layout */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: 30%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card h4 {
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Stack the personal information form fields on small screens */
+    .info-row {
+        flex-direction: column;
+    }
+
+    .input-container {
+        width: 100%;
+    }
+
+    /* Adjust the skills section layout */
+    .skills-row {
+        flex-direction: column;
+    }
+
+    .select-container {
+        width: 100%;
+    }
+
+    /* Adjust table font size for mobile screens */
+    table, table th, table td {
+        font-size: 0.9rem;
+    }
+
+    /* Adjust button font size */
+    button {
+        font-size: 0.9rem;
+    }
+}
